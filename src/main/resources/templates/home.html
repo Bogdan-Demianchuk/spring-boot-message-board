@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="repeatable/header"></head>
+<body>
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Username</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your name">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Massage</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+    <div class="row">
+        <div class="col-md-12">
+            <div th:each="el : ${allMassages}" class="alert mt-2">
+                <h2>Massage</h2>
+                <p th:text="el.massage"></p>
+                <p th:text="el.author"></p>
+                <p th:text="el.dislikes"></p>
+                <p th:text="el.likes"></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
